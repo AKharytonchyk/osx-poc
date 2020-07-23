@@ -1,0 +1,15 @@
+<ng-container *ngIf="pageData.name; else elseTemplate">
+  <div style="margin-bottom: 16px;">
+    <H1>{{pageData.name}}</H1>
+    <span>{{pageData.description}}</span>
+  </div>
+  <div style="display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap;">
+    <div *ngFor="let item of pageData.results">
+      <h2>{{item.original_title}}</h2>
+      <img [src]="[imageApi + item.poster_path]" [alt]="item.original_title">
+    </div>
+  </div>
+</ng-container>
+<ng-template #elseTemplate>
+  <h2>No data available</h2>
+</ng-template>

@@ -1,0 +1,11 @@
+<div>
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label for="title">Title: </label>
+    <input id="title" type="text" formControlName="title">
+    <label for="msg">Message: </label>
+    <input id="msg" type="text" formControlName="message">
+    <input type="submit" value="Push notification" [disabled]="!form.valid">
+  </form>
+</div>
+</div>
